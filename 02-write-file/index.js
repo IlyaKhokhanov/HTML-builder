@@ -20,3 +20,8 @@ stdin.on('data', (data) => {
     stdout.write('Please write what you want to write to the file text.txt\n');
   });
 });
+
+process.on('SIGINT', () => {
+  stdout.write('Thanks for check!');
+  process.exit();
+});
